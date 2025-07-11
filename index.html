@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Home Automation</title>
+  <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+</head>
+<body>
+  <div class="container">
+    <div id="auth">
+      <h1>Login</h1>
+      <input type="password" id="password" placeholder="Enter Password">
+      <button onclick="authenticate()">Login</button>
+    </div>
+    <div id="control" style="display:none;">
+      <h1>Home Automation</h1>
+      <div class="valve-container">
+        <label class="switch">
+          <input type="checkbox" id="valve1" onchange="toggleValve(1)">
+          <span class="slider"></span>
+        </label> Valve 1
+        <div class="schedule-container">
+          <input type="checkbox" id="schedule1" onchange="setSchedule(1)"> Enable Schedule
+          <input type="time" id="start1"> Start Time
+          <input type="time" id="end1"> End Time
+        </div>
+      </div>
+      <div class="valve-container">
+        <label class="switch">
+          <input type="checkbox" id="valve2" onchange="toggleValve(2)">
+          <span class="slider"></span>
+        </label> Valve 2
+        <div class="schedule-container">
+          <input type="checkbox" id="schedule2" onchange="setSchedule(2)"> Enable Schedule
+          <input type="time" id="start2"> Start Time
+          <input type="time" id="end2"> End Time
+        </div>
+      </div>
+      <div class="valve-container">
+        <label class="switch">
+          <input type="checkbox" id="valve3" onchange="toggleValve(3)">
+          <span class="slider"></span>
+        </label> Valve 3
+        <div class="schedule-container">
+          <input type="checkbox" id="schedule3" onchange="setSchedule(3)"> Enable Schedule
+          <input type="time" id="start3"> Start Time
+          <input type="time" id="end3"> End Time
+        </div>
+      </div>
+      <div class="valve-container">
+        <label class="switch">
+          <input type="checkbox" id="valve4" onchange="toggleValve(4)">
+          <span class="slider"></span>
+        </label> Valve 4
+        <div class="schedule-container">
+          <input type="checkbox" id="schedule4" onchange="setSchedule(4)"> Enable Schedule
+          <input type="time" id="start4"> Start Time
+          <input type="time" id="end4"> End Time
+        </div>
+      </div>
+      <div class="gauge-container">
+        <p class="gauge-display" id="gaugeDisplay">Gauge Value: 0</p>
+        <progress class="gauge" id="gaugeProgressBar" value="0" max="100"></progress>
+      </div>
+    </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+  <script src="script.js"></script> <!-- Link to the external JavaScript file -->
+</body>
+</html>
